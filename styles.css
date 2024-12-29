@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background: url('https://github.com/anonymouspookie9869/newyear2025/blob/main/New%20Year%202025%20wishing%20images%20(1).png?raw=true') no-repeat center center fixed;
+    font-family: 'Montserrat', sans-serif;
+    background: url('https://img.freepik.com/premium-photo/new-year-celebration-fireworks-sky-snow-winter-atmosphere-background-wallpaper-ai-ge_894218-510.jpg') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -12,72 +12,187 @@ body {
 
 .container {
     text-align: center;
-    border: 2px solid #ffffff;
-    padding: 20px;
+    position: relative;
+}
+
+.text-and-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.text-content {
+    margin-right: 20px;
+}
+
+.bigben-image {
+    width: 150px;
+    height: auto;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 2s forwards;
 }
 
-h1 {
-    color: #ff0066;
-    animation: bounce 2s infinite;
-    text-shadow: 2px 2px 4px #000000;
+.gift-box {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
 }
 
-p {
-    font-size: 20px;
-    color: #333333;
+.lid {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 5px 5px 0 0;
+    animation: shake 1s infinite;
 }
 
-.instruction {
-    font-size: 16px;
-    color: #555555;
+.box {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: 100px;
+    background-color: #ffcc33;
+    border-radius: 0 0 5px 5px;
 }
 
-button {
-    padding: 10px 20px;
+.message {
+    margin-top: 40px;
     font-size: 16px;
     color: #ffffff;
-    background-color: #007bff;
-    border: none;
+}
+
+#snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+.animate-title, .animate-wisher, .instruction {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
     border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-    animation: grow 2s infinite;
+    font-family: 'Great Vibes', cursive;
+    animation: leafFall 5s ease-in-out, floatAnimation 3s infinite alternate;
 }
 
-button:hover {
-    background-color: #0056b3;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
+@keyframes shake {
+    0%, 100% {
+        transform: rotate(0);
     }
-    40% {
-        transform: translateY(-30px);
+    25% {
+        transform: rotate(3deg);
     }
-    60% {
-        transform: translateY(-15px);
+    75% {
+        transform: rotate(-3deg);
     }
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+@keyframes fall {
     to {
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes leafFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(50vh) rotate(180deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0vh) rotate(360deg);
         opacity: 1;
     }
 }
 
-@keyframes grow {
-    0%, 100% {
+@keyframes floatAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Fireworks */
+#fireworks-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    bottom: 0;
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+    border-radius: 50%;
+    animation: launch 1s ease-out forwards, explode 1.5s 1s ease-out forwards;
+}
+
+@keyframes launch {
+    0% {
+        transform: translateY(0);
+        background-color: red;
+    }
+    100% {
+        transform: translateY(-500px);
+        background-color: transparent;
+    }
+}
+
+@keyframes explode {
+    0% {
         transform: scale(1);
+        opacity: 1;
+        background-color: red;
     }
     50% {
-        transform: scale(1.1);
+        transform: scale(5);
+        opacity: 0.5;
+        background-color: yellow;
     }
+    100% {
+        transform: scale(8);
+        opacity: 0;
+        background-color: transparent;
+    }
+}
+
+.firework:nth-child(2) {
+    animation-delay: 1.5s;
+}
+
+.firework:nth-child(3) {
+    animation-delay: 3s;
 }

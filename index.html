@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy New Year 2025</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1 class="animate-title">Happy New Year 2025!</h1>
-        <p id="wisher" class="animate-wisher">Best wishes to you and your family from, <span id="name">Your Friend</span></p>
-        <p class="instruction">Click the button below to enter the name of the wisher:</p>
-        <button class="animate-button" onclick="changeName()">Change Name</button>
+        <div class="gift-box" onclick="openBox()">
+            <div class="lid"></div>
+            <div class="box">
+                <p class="message">Click to open</p>
+            </div>
+        </div>
+        <div id="greeting" class="hidden">
+            <div class="text-and-image">
+                <div class="text-content">
+                    <h1 class="animate-title">Happy New Year 2025!</h1>
+                    <p id="wisher" class="animate-wisher">Best wishes to you and your family from, <span id="name">Your Friend</span></p>
+                    <p class="instruction">Click the button below to enter the name of the wisher:</p>
+                    <button class="animate-button" onclick="changeName()">Change Name</button>
+                </div>
+                <img src="https://www.hindustantimes.com/ht-img/img/2023/10/23/1600x900/As-the-decades-passed--the-vagaries-of-weather-and_1698060268622.jpg" alt="Big Ben Clock Tower" class="bigben-image">
+            </div>
+        </div>
+        <div id="fireworks-container" class="hidden">
+            <div class="firework"></div>
+            <div class="firework"></div>
+            <div class="firework"></div>
+        </div>
+        <div id="snowflakes"></div>
     </div>
+    <audio id="fireworks-sound" src="https://github.com/anonymouspookie9869/newyear2025/blob/main/fireworks-29629.mp3"></audio>
     <script src="script.js"></script>
 </body>
 </html>
